@@ -3,7 +3,7 @@
   <div class="field">
     <%= f.text_area :content, placeholder: "Compose a New Discussion Post..." %>
   </div>
-  <%= f.submit "Post", class: "btn btn-primary" %>
+  <%= f.submit "Post", class: "btn--form" %>
   <span class="picture">
     <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
   </span>
@@ -16,4 +16,4 @@
       alert('Maximum file size is 5MB. Please choose a smaller file.');
     }
   });
-</script>
+</script> 

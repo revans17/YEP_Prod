@@ -412,8 +412,17 @@ input {
 
 aside {
   textarea {
-    height: 100px;
-    margin-bottom: 5px;
+     width: 100%;
+     height: 120px;
+     padding: 12px 20px;
+     box-sizing: border-box;
+     border: 2px solid #ccc;
+     border-radius: 4px;
+     background-color: #f8f8f8;
+     color:#999;
+     font-family:'Ubuntu', Helvetica, Arial, sans-serif;
+     resize: none;
+     outline: none;
   }
 }
 
