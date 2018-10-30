@@ -38,7 +38,7 @@ end
 
 group :production do
   gem 'pg',  '0.20.0'
-  gem 'paperclip', '~> 4.3', '>= 4.3.6'
+  gem 'paperclip', '5.2.0'
   gem 'fog', '1.42'
 end
 
