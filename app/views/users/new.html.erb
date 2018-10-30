@@ -1,0 +1,43 @@
+<% provide(:title, 'Sign up') %>
+<div class="signup__container">
+  <div class="container__child signup__thumbnail">
+    <div class="thumbnail__logo">
+      <svg class="logo__shape" width="25px" viewBox="0 0 634 479" xmlns="http://www.w3.org/2000/svg"><g> </g></svg>
+      <h1 class="logo__text">YEP</h1>
+    </div>
+    <div class="thumbnail__content text-center">
+      <h1 class="heading--primary">Welcome to The Discussion.</h1>
+      <h2 class="heading--secondary">Create an account to get started</h2>
+    </div>
+    <div class="signup__overlay"></div>
+  </div>
+     <div class="container__child signup__form">
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <div class="form-group">
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+</div>
+<div class="form-group">
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+</div>
+<div class="form-group">
+
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+</div>
+<div class="form-group">
+
+      <%= f.label :password_confirmation, "Confirmation Password" %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+</div>
+<div class="m-t-lg">
+   <ul class="list-inline">
+     <li><%= f.submit "Create my account", class: "btn--form" %></li>
+     <li><%= link_to "Sign In!", login_path, class: "btn--form" %></li>
+</ul>
+</div>
+<%end%>

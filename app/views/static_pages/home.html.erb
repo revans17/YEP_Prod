@@ -1,0 +1,82 @@
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="stats">
+        <%= render 'shared/stats' %>
+      </section>
+      <section class="micropost_form">
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+    <div class="col-md-8">
+      <h3>All Volunteer Posts</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+<% else %>
+
+<% provide(:title, 'Sign in') %>
+<div class="signup__container">
+  <div class="container__child signup__thumbnail">
+    <div class="thumbnail__logo">
+      <svg class="logo__shape" width="25px" viewBox="0 0 634 479" xmlns="http://www.w3.org/2000/svg"><g> </g></svg>
+      <h1 class="logo__text">YEP</h1>
+    </div>
+    <div class="thumbnail__content text-center">
+      <h1 class="heading--primary">Welcome to The Discussion.</h1>
+      <h2 class="heading--secondary">Log In To View Current Events</h2>
+    </div>
+    <div class="signup__overlay"></div>
+  </div>
+     <div class="container__child signup__form">
+
+    <%= form_for(:session, url: login_path) do |f| %>
+     <div class="form-group">
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+</div>
+<div class="form-group">
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+</div>
+     <!-- <div class="m-t-lg">
+       <ul class="list-inline">
+          <li>
+               <%= link_to "forgot password", new_password_reset_path, class: "btn--form" %>
+          </li>
+     </ul>
+     </div> -->
+
+
+<div class="form-group">
+      <%= f.label :remember_me, class: "checkbox inline" do %>
+        <%= f.check_box :remember_me %>
+        <span>Remember me on this computer</span>
+      <% end %>
+      <div class="m-t-lg">
+         <ul class="list-inline">
+           <li>
+                <%= f.submit "Log in", class: "btn--form" %>
+           </li>
+           <li>
+               <%= link_to "Sign up now!", signup_path, class: "btn--form" %>
+          </li>
+      </ul>
+      </div>
+    <% end %>
+
+
+
+  <!-- <div class="center jumbotron"> -->
+    <!-- <h1>Volunteer Discussion</h1> -->
+
+    <!-- <h2>
+
+    </h2> -->
+    <!-- <%= link_to "Sign In!", login_path, class: "btn btn-lg btn-primary" %>
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %> -->
+  <!-- </div> -->
+<% end %>
