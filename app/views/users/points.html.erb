@@ -35,6 +35,9 @@
         <%= g.text_field :points, class: 'form-control' %>
         <%= g.submit "Save changes", class: "btn--form" %>
      <% end %>
+     <% dolVal = @user.points %>
+
+     <span><b>Your  <%= @user.points %>  points are worth: $<%= (dolVal.to_f)/ 20.00%>0 </b> </span>
   <% end %>
   </div>
 </div>
