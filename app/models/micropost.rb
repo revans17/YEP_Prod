@@ -6,6 +6,13 @@ class Micropost < ApplicationRecord
   validates :content, presence: true, length: { maximum: 140 }
   validate  :picture_size
   self.per_page = 10
+  
+  def upvote
+       @micropost.increment!(:like)
+  end
+  # def increase_likes
+  #   update_attributes(:like => like + 1)
+  # end
   private
 
     # Validates the size of an uploaded picture.
@@ -14,4 +21,5 @@ class Micropost < ApplicationRecord
         errors.add(:picture, "should be less than 5MB")
       end
     end
+
 end

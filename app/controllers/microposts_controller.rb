@@ -1,5 +1,5 @@
 class MicropostsController < ApplicationController
-  before_action :logged_in_user, only: [:create, :destroy]
+  before_action :logged_in_user, only: [:create, :destroy, :like]
    before_action :correct_user, only:  :destroy
     before_action :admin_user, only: :destroy
   def create
@@ -19,10 +19,29 @@ class MicropostsController < ApplicationController
     redirect_to request.referrer || root_url
   end
 
-  private
+  def points
+   @title = "Likes"
+   @micropost  = Micropost.find(params[:id])
+   @microposts = @micropost.followers.paginate(page: params[:page])
+   render 'points'
+  end
 
+  def upvote
+       # @micropost = Micropost.find(params[:id])
+       @micropost = Micropost.find(params[:id])
+       Micropost.find(params[:id]).increment!(:like, 1)
+       redirect_to root_url
+  end
+
+
+
+
+  private
+  def increase_likes
+    update_attributes(:like => :like + 1)
+  end
     def micropost_params
-      params.require(:micropost).permit(:content, :picture)
+      params.require(:micropost).permit(:content, :picture, :like)
     end
     def correct_user
        @micropost = Micropost.find(params[:id])

@@ -3,6 +3,8 @@
   <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
   <span class="content">
     <%= micropost.content %>
+        <br>
+        Likes: <%= micropost.like %>
     <%= image_tag micropost.picture.url if micropost.picture? %>
   </span>
   <span class="timestamp">
@@ -11,5 +13,8 @@
       <%= link_to "Delete", micropost, method: :delete,
                                        data: { confirm: "You sure?" } %>
     <% end %>
+    <% if current_user != micropost.user%>
+         <%= link_to 'like', upvote_micropost_url(micropost.id), class: "btn--form--small" %>
+    <%end%>
   </span>
 </li>
