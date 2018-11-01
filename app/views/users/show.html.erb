@@ -12,6 +12,25 @@
     <section class="stats">
       <%= render 'shared/stats' %>
     </section>
+    <section>
+         <% if current_user.admin? %>
+         <%= form_for(@user) do |g| %>
+         <%= render 'shared/error_messages', object: g.object %>
+         <b>Make Admin?</b>
+         <br>
+         <table >
+              <tr>
+                   <td>Yes <%=radio_button("user", "admin", "true")%></td>
+                   <td>No <%=radio_button("user", "admin", "false")%></td>
+              </tr>
+              <tr>
+                    <td><%= g.submit "Save", class: "btn--form--small" %></td> 
+              </tr>
+         </table>
+
+         <%end%>
+         <%end%>
+    </section>
   </aside>
   <div class="col-md-8">
     <%= render 'follow_form' if logged_in? %>
