@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get    '/help',    to: 'static_pages#help'
   get    '/about',   to: 'users#rewards'
   get    '/contact', to: 'static_pages#contact'
+  get    '/how_to',   to: 'static_pages#how_to'
   get    '/signup',  to: 'users#new'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'

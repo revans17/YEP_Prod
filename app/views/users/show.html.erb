@@ -24,7 +24,20 @@
                    <td>No <%=radio_button("user", "admin", "false")%></td>
               </tr>
               <tr>
-                    <td><%= g.submit "Save", class: "btn--form--small" %></td> 
+                    <td><%= g.submit "Save", class: "btn--form--small" %></td>
+              </tr>
+         </table>
+         <%end%>
+         <%= form_for(@user) do |g| %>
+         <b>Verify Account?</b>
+         <br>
+         <table >
+              <tr>
+                   <td>Yes <%=radio_button("user", "activated", "true")%></td>
+                   <td>No <%=radio_button("user", "activated", "false")%></td>
+              </tr>
+              <tr>
+                    <td><%= g.submit "Save", class: "btn--form--small" %></td>
               </tr>
          </table>
 
