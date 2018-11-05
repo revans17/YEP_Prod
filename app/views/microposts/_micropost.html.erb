@@ -14,7 +14,7 @@
                                        data: { confirm: "You sure?" } %>
     <% end %>
     <% if current_user != micropost.user%>
-         <%= link_to 'like', upvote_micropost_url(micropost.id), class: "btn--form--small" %>
+         <%= link_to 'like', upvote_micropost_url(micropost.id), class: "btn--form--like" %>
     <%end%>
   </span>
 </li>

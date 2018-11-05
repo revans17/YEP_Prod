@@ -130,6 +130,17 @@ label {
   &:focus,
   &:hover {background: lighten(#111, 13%);}
 }
+.btn--form--like {
+  padding: .35rem 1.6rem;
+  font-size: .85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  background: #111;
+  border-radius: remy(35px);
+  &:focus,
+  &:hover {background: lighten(#111, 13%);}
+}
 .signup__link {
   font-size: .8rem;
   font-weight: 600;
