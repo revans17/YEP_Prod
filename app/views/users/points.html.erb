@@ -24,7 +24,7 @@
       <ul class="users follow">
            <%=@user.name%> has
         <%= @user.points %>
-         points
+         points.
       </ul>
      <% end %>
      <br>
@@ -36,8 +36,7 @@
         <%= g.submit "Save changes", class: "btn--form" %>
      <% end %>
      <% dolVal = @user.points %>
-
-     <span><b>Your  <%= @user.points %>  points are worth: $<%= (dolVal.to_f)/ 20.00%>0 </b> </span>
+     <span><b><%= @user.name.pluralize %>  <%= @user.points %>  points are worth: $<%= (dolVal.to_f)/ 20.00%>0. </b> </span>
   <% end %>
   </div>
 </div>

@@ -7,6 +7,7 @@
         <%= @user.name %>
         <br><br>
         <%= @user.phone_number %>
+        <%= render 'follow_form' if logged_in? %>
       </h1>
     </section>
     <section class="stats">
@@ -46,7 +47,7 @@
     </section>
   </aside>
   <div class="col-md-8">
-    <%= render 'follow_form' if logged_in? %>
+
     <% if @user.microposts.any? %>
       <h3>Discussion Posts: </h3>
       <ol class="microposts">
