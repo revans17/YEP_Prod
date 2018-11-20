@@ -20,7 +20,7 @@
   </aside>
   <div class="col-md-8">
     <h3><%= @title %></h3>
-    <% if @user.points > "0" %>
+    <% if @user.points != "0" %>
       <ul class="users follow">
            <%=@user.name%> has
         <%= @user.points %>
